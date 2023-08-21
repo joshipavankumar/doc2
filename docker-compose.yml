@@ -1,0 +1,29 @@
+---
+version: '3'
+services:
+  movie:
+    image: joshipavan316/movies:v1
+    ports:
+      - "8001:80"
+    volumes:
+      - "volume1"
+    deploy:
+      replicas: 4
+
+  train:
+    image: joshipavan316/trains:v1
+    volumes:
+      - "volume2"
+    ports:
+      - "8002:80"
+    deploy:
+      replicas: 4
+
+  recharge:
+    image: joshipavan316/recharges:v1
+    volumes:
+      - "volume3"
+    ports:
+      - "8003:80"
+    deploy:
+      replicas: 4
